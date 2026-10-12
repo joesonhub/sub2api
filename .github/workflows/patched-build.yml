@@ -37,7 +37,7 @@ jobs:
           cd backend
           CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build \
             -tags embed \
-            -ldflags="-s -w -X main.Version=0.2.14+pr7899 -X main.Commit=${GITHUB_SHA::9} -X main.Date=$(date -u +%Y-%m-%dT%H:%M:%SZ) -X main.BuildType=release" \
+            -ldflags="-s -w -X main.Version=0.2.15+pr7899 -X main.Commit=${GITHUB_SHA::9} -X main.Date=$(date -u +%Y-%m-%dT%H:%M:%SZ) -X main.BuildType=release" \
             -trimpath \
             -o ../sub2api-patched \
             ./cmd/server
