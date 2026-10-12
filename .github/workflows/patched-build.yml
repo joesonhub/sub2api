@@ -32,6 +32,12 @@ jobs:
           check-latest: false
           cache: false
 
+      - name: Run patch regression tests
+        run: |
+          cd backend
+          go test ./internal/handler/ -run 'Failover|SameAccount' -count=1
+          go test ./internal/service/ -run 'Antigravity' -count=1
+
       - name: Build backend with embedded frontend
         run: |
           cd backend
